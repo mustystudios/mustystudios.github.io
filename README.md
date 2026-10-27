@@ -1,2 +1,2 @@
-# mustythecreator.girhub.io
+# mustythecreator.github.io
 Official website of Musty Studios
