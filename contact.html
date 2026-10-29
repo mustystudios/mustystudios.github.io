@@ -2,11 +2,31 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Contact | Musty Studios</title><meta name="description" content="Contact Musty Studios for support, privacy requests and business enquiries.">
 <meta property="og:title" content="Contact | Musty Studios"><meta property="og:description" content="Contact Musty Studios for support, privacy requests and business enquiries."><meta property="og:type" content="website">
-<link rel="icon" href="bandit-icon.png"><link rel="stylesheet" href="style.css"></head>
-<body><header><a class="brand" href="index.html"><img src="musty-studios-logo.svg" alt="Musty Studios logo"></a><nav><a href="index.html">Home</a><a href="bandit-dash.html">Bandit Dash</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html" class=on>Contact</a></nav></header>
+<link rel="icon" href="bandit-icon.png"><link rel="stylesheet" href="style.css"><style>
+/* Header redesign (overrides style.css) */
+header{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;padding:10px 20px;background:#05050d;border-bottom:1px solid #1c1c28}
+header .brand img{height:36px;width:auto;display:block}
+header nav{display:flex;gap:28px}
+header nav a{color:#8a8fa3;text-decoration:none;font-size:15px;letter-spacing:.5px;transition:color .2s}
+header nav a:hover,header nav a.on{color:#fff}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+@media(max-width:640px){
+  .menu-btn{display:block}
+  header nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:#0a0a14;border-bottom:1px solid #1c1c28}
+  header nav.open{display:flex}
+  header nav a{padding:16px 20px;border-top:1px solid #1c1c28;font-size:16px}
+}
+.hero img{width:min(440px,80vw);height:auto}
+</style>
+</head>
+<body><header><a class="brand" href="index.html"><img src="musty-studios-logo.svg" alt="Musty Studios logo"></a><button class="menu-btn" aria-label="Menu" aria-expanded="false">&#9776;</button><nav><a href="index.html">Home</a><a href="games.html">Games</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html" class="on">Contact</a></nav></header>
 <main>
 <h1>Contact us</h1><p>We read every message. Email is the fastest way to reach us.</p>
 <div class="box"><p style="margin:0"><b>Email:</b> <a href="mailto:mustythecreator@gmail.com">mustythecreator@gmail.com</a></p></div>
 <h2>What to include</h2><ul><li><b>Game support:</b> your phone model, Android version and a short description of what happened.</li><li><b>Privacy requests:</b> say what you would like (access, correction or deletion). See our <a href="privacy.html">Privacy Policy</a>.</li><li><b>Business and press:</b> tell us about your idea or request.</li></ul>
 <p class="muted">We aim to reply within 7 days. Requests about personal data are answered within 30 days where possible.</p></main>
-<footer><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="contact.html">Contact</a><div style="margin-top:8px">&copy; 2026 Musty Studios. All rights reserved.</div></footer></body></html>
+<footer><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="contact.html">Contact</a><div style="margin-top:8px">&copy; 2026 Musty Studios. All rights reserved.</div></footer><script>
+const b=document.querySelector('.menu-btn'),n=document.querySelector('header nav');
+b.onclick=()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);b.innerHTML=o?'&#10005;':'&#9776;'};
+</script>
+</body></html>

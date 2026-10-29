@@ -2,8 +2,24 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Bandit Dash | Musty Studios</title><meta name="description" content="Bandit Dash is a fast rooftop racing game. Sprint, slide and glide through five worlds against rival raccoons.">
 <meta property="og:title" content="Bandit Dash | Musty Studios"><meta property="og:description" content="Bandit Dash is a fast rooftop racing game. Sprint, slide and glide through five worlds against rival raccoons."><meta property="og:type" content="website">
-<link rel="icon" href="bandit-icon.png"><link rel="stylesheet" href="style.css"></head>
-<body><header><a class="brand" href="index.html"><img src="musty-studios-logo.svg" alt="Musty Studios logo"></a><nav><a href="index.html">Home</a><a href="bandit-dash.html" class=on>Bandit Dash</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></nav></header>
+<link rel="icon" href="bandit-icon.png"><link rel="stylesheet" href="style.css"><style>
+/* Header redesign (overrides style.css) */
+header{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;padding:10px 20px;background:#05050d;border-bottom:1px solid #1c1c28}
+header .brand img{height:36px;width:auto;display:block}
+header nav{display:flex;gap:28px}
+header nav a{color:#8a8fa3;text-decoration:none;font-size:15px;letter-spacing:.5px;transition:color .2s}
+header nav a:hover,header nav a.on{color:#fff}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+@media(max-width:640px){
+  .menu-btn{display:block}
+  header nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:#0a0a14;border-bottom:1px solid #1c1c28}
+  header nav.open{display:flex}
+  header nav a{padding:16px 20px;border-top:1px solid #1c1c28;font-size:16px}
+}
+.hero img{width:min(440px,80vw);height:auto}
+</style>
+</head>
+<body><header><a class="brand" href="index.html"><img src="musty-studios-logo.svg" alt="Musty Studios logo"></a><button class="menu-btn" aria-label="Menu" aria-expanded="false">&#9776;</button><nav><a href="index.html">Home</a><a href="games.html" class="on">Games</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></nav></header>
 <main>
 <h1>Bandit Dash</h1><p class="tag">A rooftop race through five worlds</p>
 <div class="box"><img src="bandit-icon.png" alt="Bandit Dash icon" style="width:96px;height:96px;border-radius:22px;float:left;margin:0 16px 6px 0"><p>Race two rival raccoons across glowing rooftops, sunset ruins, misty jungle cliffs, frozen peaks and a neon harbor. Tap to jump, swipe to slide and grab power-ups to stay ahead. Finish first to earn stars, coins and rare keys.</p><span class="pill">Coming soon to Google Play</span><div style="clear:both"></div></div>
@@ -17,4 +33,8 @@
 <h2>Screenshots</h2><p class="muted">Screenshots will be added at launch.</p>
 <h2>Good to know</h2><p>Bandit Dash is free to play with optional ads and optional in-app purchases. You must be 13 or older to play. Read our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a>.</p>
 <p><a class="btn alt" href="contact.html">Contact support</a></p></main>
-<footer><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="contact.html">Contact</a><div style="margin-top:8px">&copy; 2026 Musty Studios. All rights reserved.</div></footer></body></html>
+<footer><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="contact.html">Contact</a><div style="margin-top:8px">&copy; 2026 Musty Studios. All rights reserved.</div></footer><script>
+const b=document.querySelector('.menu-btn'),n=document.querySelector('header nav');
+b.onclick=()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);b.innerHTML=o?'&#10005;':'&#9776;'};
+</script>
+</body></html>

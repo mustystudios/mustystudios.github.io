@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Games | Musty Studios</title>
+<meta name="description" content="Games by Musty Studios. Play Bandit Dash, a rooftop racing adventure for Android.">
+<meta property="og:title" content="Games | Musty Studios">
+<meta property="og:description" content="Games by Musty Studios. Play Bandit Dash, a rooftop racing adventure for Android.">
+<meta property="og:type" content="website">
+<link rel="icon" href="bandit-icon.png">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Header redesign (overrides style.css) */
+header{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;padding:10px 20px;background:#05050d;border-bottom:1px solid #1c1c28}
+header .brand img{height:36px;width:auto;display:block}
+header nav{display:flex;gap:28px}
+header nav a{color:#8a8fa3;text-decoration:none;font-size:15px;letter-spacing:.5px;transition:color .2s}
+header nav a:hover,header nav a.on{color:#fff}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+@media(max-width:640px){
+  .menu-btn{display:block}
+  header nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:#0a0a14;border-bottom:1px solid #1c1c28}
+  header nav.open{display:flex}
+  header nav a{padding:16px 20px;border-top:1px solid #1c1c28;font-size:16px}
+}
+.hero img{width:min(440px,80vw);height:auto}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="index.html"><img src="musty-studios-logo.svg" alt="Musty Studios logo"></a>
+  <button class="menu-btn" aria-label="Menu" aria-expanded="false">&#9776;</button>
+  <nav><a href="index.html">Home</a><a href="games.html" class="on">Games</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></nav>
+</header>
+
+<main>
+<h1>Our games</h1>
+<p class="muted">Easy to pick up, fun to master and kind to your phone. More games are on the way.</p>
+<div class="cards">
+  <div class="card">
+    <img class="icon" src="bandit-icon.png" alt="Bandit Dash icon">
+    <h3 style="margin-top:0">Bandit Dash</h3>
+    <p class="muted">Race rival raccoons across five worlds. Coming soon to Google Play.</p>
+    <a class="btn" href="bandit-dash.html">See the game</a>
+  </div>
+</div>
+<p class="muted" style="margin-top:28px">New worlds are in the works. Check back soon.</p>
+</main>
+
+<footer>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms of Service</a>
+  <a href="contact.html">Contact</a>
+  <div style="margin-top:8px">&copy; 2026 Musty Studios. All rights reserved.</div>
+</footer>
+
+<script>
+const b=document.querySelector('.menu-btn'),n=document.querySelector('header nav');
+b.onclick=()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);b.innerHTML=o?'&#10005;':'&#9776;'};
+</script>
+</body>
+</html>
