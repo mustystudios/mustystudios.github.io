@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mustythecreator.github.io/sitemap.xml
+Sitemap: https://mustystudios.github.io/sitemap.xml
